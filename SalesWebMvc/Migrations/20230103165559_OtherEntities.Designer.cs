@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SalesWebMvc.Data;
+using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Migrations
 {
     [DbContext(typeof(SalesWebMvcContext))]
-    [Migration("20230102130132_OtherEntities")]
+    [Migration("20230103165559_OtherEntities")]
     partial class OtherEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,8 +63,6 @@ namespace SalesWebMvc.Migrations
                     b.Property<int?>("DepartmentId");
 
                     b.Property<string>("Email");
-
-                    b.Property<int>("MyProperty");
 
                     b.Property<string>("Name");
 

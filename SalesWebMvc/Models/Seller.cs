@@ -12,8 +12,7 @@ namespace SalesWebMvc.Models
         public string Email { get; set; }
         public double BaseSalary { get; set; }
         public DateTime BirthDate { get; set; }
-        public Department Department { get; set; }
-        public int MyProperty { get; set; }
+        public Department Department { get; set; }        
         public ICollection<SalesRecord> Sales { get; set; } = new List<SalesRecord>();
 
         public Seller()
@@ -21,16 +20,14 @@ namespace SalesWebMvc.Models
 
         }
 
-        public override bool Equals(object obj)
+        public Seller(int id, string name, string email, double baseSalary, DateTime birthDate, Department department)
         {
-            return obj is Seller seller &&
-                   Id == seller.Id &&
-                   Name == seller.Name &&
-                   Email == seller.Email &&
-                   BaseSalary == seller.BaseSalary &&
-                   BirthDate == seller.BirthDate &&
-                   EqualityComparer<Department>.Default.Equals(Department, seller.Department) &&
-                   MyProperty == seller.MyProperty;
+            Id = id;
+            Name = name;
+            Email = email;
+            BaseSalary = baseSalary;
+            BirthDate = birthDate;
+            Department = department;
         }
 
         public void AddSales(SalesRecord sr)
